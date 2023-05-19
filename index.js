@@ -10,11 +10,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Serve static files from the 'client/build' directory
-app.use(express.static(join(__dirname, "./client/dist")));
+app.use(express.static(join(__dirname, "./client/build")));
 
 // Handle all other routes
 app.get("*", (_, res) => {
-  res.sendFile(join(__dirname, "./client/dist/index.html"), (err) => {
+  res.sendFile(join(__dirname, "./client/build/index.html"), (err) => {
     if (err) {
       res.status(500).send(err);
     }
